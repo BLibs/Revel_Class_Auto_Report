@@ -4,7 +4,7 @@
 API_KEY = "API key goes here"
 
 # Used to map the names of the establishments in the data (API returns this data with est number, not name)
-establishment_mapping = {
+ESTABLISHMENT_MAPPING = {
         1.0: 'Est 1',
         4.0: 'Est 2',
         5.0: 'Est 3',
@@ -41,5 +41,5 @@ EMAIL_PASSWORD = 'Gmail account password goes here'
 RECIPIENT_EMAIL = ['Recipient email address goes here (can be a list of multiple recipients)']
 
 # Establishment name and abbreviated name for use in URL on endpoint and email subject
-establishment_name = "Establishment name for URL goes here"
-abr_est_name = "Abbreviated name would go here"
+ESTABLISHMENT_NAME = "Establishment name for URL goes here"
+ABR_EST_NAME = "Abbreviated name would go here"

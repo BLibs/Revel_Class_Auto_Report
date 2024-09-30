@@ -48,7 +48,7 @@ def main():
     handle_file(PATH)
     time.sleep(10)
     # Send the file via email to the listed recipients
-    send_report_email(PATH, f"{abr_est_name} Weekly Class File " + get_dates(1))
+    send_report_email(PATH, f"{ABR_EST_NAME} Weekly Class File " + get_dates(1))
 
 
 if __name__ == "__main__":

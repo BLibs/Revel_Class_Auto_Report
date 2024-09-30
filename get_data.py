@@ -1,6 +1,6 @@
 import requests
 from datetime import timedelta, datetime
-from config import API_KEY, establishment_mapping, establishment_name
+from config import API_KEY, ESTABLISHMENT_MAPPING, ESTABLISHMENT_NAME
 import pandas as pd
 
 
@@ -27,7 +27,7 @@ def get_data():
             range_to = get_dates(0)
 
             # Establishment name redacted
-            url = f"https://{establishment_name}.revelup.com/reports/product_mix/data/"
+            url = f"https://{ESTABLISHMENT_NAME}.revelup.com/reports/product_mix/data/"
 
             # Pass the est and date range in the query string. Other required values set as well
             querystring = {"establishment": est, "range_from": range_from, "range_to": range_to,
@@ -35,7 +35,6 @@ def get_data():
                            "employee": "", "show_unpaid": "1", "show_irregular": "1", "format": "json"}
 
             headers = {
-                "User-Agent": "insomnia/2023.5.8",
                 "API-AUTHENTICATION": API_KEY
             }
 
@@ -52,6 +51,6 @@ def get_data():
 
     df = pd.DataFrame(data_container)
     # Map the establishment names to the data (variable held in config.py)
-    df['Establishment'] = df['Establishment'].map(establishment_mapping).fillna(df['Establishment'])
+    df['Establishment'] = df['Establishment'].map(ESTABLISHMENT_MAPPING).fillna(df['Establishment'])
 
     return df
