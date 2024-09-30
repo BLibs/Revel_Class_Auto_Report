@@ -45,9 +45,7 @@ def get_data():
 
             for product in data:
                 name = product.get("product_name")
-                # print(name)
                 total = product.get("price")
-                # print(total)
                 data_container.append({'Establishment': est, 'Class': name, 'Total': total})
 
         est += 1
