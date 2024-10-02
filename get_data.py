@@ -16,15 +16,18 @@ def get_dates(offset):
 def get_data():
     # Used to hold the data that we will return
     data_container = []
+
     # Starting establishment
     est = 1
+
+    # Get the dates that we will pass to the data endpoint (1 week in example here)
+    range_from = get_dates(7)
+    range_to = get_dates(0)
+
     # For _ in range of 21 (max establishment number)
     for _ in range(21):
         # As long as it is not est 2 or est 3 (these establishments are not applicable)
         if est != 2 and est != 3:
-            # Get the dates that we will pass to the data endpoint (1 week in example here)
-            range_from = get_dates(7)
-            range_to = get_dates(0)
 
             # Establishment name redacted
             url = f"https://{ESTABLISHMENT_NAME}.revelup.com/reports/product_mix/data/"
